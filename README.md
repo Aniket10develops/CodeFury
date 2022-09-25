@@ -3,11 +3,13 @@
 ## Project Name: Order Processing System
 ## Team Name: BlackKnight Team 1
 
+##SpringBoot Framework
+
 How to Run in Your Desktop?
 - Step1: Clone Repository
 - Step2: Open Product Manager-Master in Application Folder
 - Step3: Download Database & Configure Application Property
-- Step4: Run as springBoot by click on ProductManagerApplication.java
+- Step4: Run ProductManagerApplication.java
 
 Implementation:
 - Role Base Login : Employee and Customer
