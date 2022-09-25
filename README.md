@@ -11,9 +11,9 @@ How to Run in Your Desktop?
 
 Implementation:
 - Role Base Login : Employee and Customer
-- Password Stored in Encryption Formate
+- Passwords are Encrypted while Storing into DB
 - Employee can Create New Product and Quote
-- Cutomer can update status of each Quote
+- Customer can update status of each Quote
 - Both role can see invoice order
 - Product table can be edit or deleted
 - Automatic GST and Shipcost calculated 
