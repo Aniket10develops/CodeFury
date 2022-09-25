@@ -1,13 +1,13 @@
 # CodeFury
 
-##Project Name: Order Processing System
-##Team Name: BlackKnight Team 1
+## Project Name: Order Processing System
+## Team Name: BlackKnight Team 1
 
 How to Run in Your Desktop?
-Step1: Clone Repository
-Step2: Open Application Folder
-Step3: Download Database & Configure Application Property
-Step4: Run as springBoot by click on ProductManagerApplication.java
+- Step1: Clone Repository
+- Step2: Open Application Folder
+- Step3: Download Database & Configure Application Property
+- Step4: Run as springBoot by click on ProductManagerApplication.java
 
 Implementation:
 - Role Base Login : Employee and Customer
