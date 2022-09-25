@@ -5,7 +5,7 @@
 
 How to Run in Your Desktop?
 - Step1: Clone Repository
-- Step2: Open Application Folder
+- Step2: Open Product Manager-Master in Application Folder
 - Step3: Download Database & Configure Application Property
 - Step4: Run as springBoot by click on ProductManagerApplication.java
 
