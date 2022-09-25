@@ -38,27 +38,27 @@ body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0,
 		
 		<tr>
 			<td> Customer Name: </td>
-			<td><input type="text" th:field="*{cname}"/></td>
+			<td><input type="text" th:field="*{cname}" required/></td>
 		</tr>
 		<tr>
 			<td> Customer ID: </td>
-			<td><input type="text" th:field="*{cid}"/></td>
+			<td><input type="text" th:field="*{cid}" required /></td>
 		</tr>
 		<tr>
 			<td> City: </td>
-			<td><input type="text" th:field="*{city}"/></td>
+			<td><input type="text" th:field="*{city}" required /></td>
 		</tr>
 		<tr>
 			<td> Order ID: </td>
-			<td><input type="text" th:field="*{oid}"/></td>
+			<td><input type="text" th:field="*{oid}" required /></td>
 		</tr>
 		<tr>
 			<td> Order Date: </td>
-			<td><input type="text" th:field="*{odate}"/></td>
+			<td><input type="text" th:field="*{odate}" required /></td>
 		</tr>
 		<tr>
 			<td> Order Status: </td>
-			<td><input type="text" th:field="*{status}"/></td>
+			<td><input type="text" th:field="*{status}" required /></td>
 		</tr>
 		<tr>
 			<td> Order Value: </td>
