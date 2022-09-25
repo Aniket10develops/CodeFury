@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add New Quote</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+h2 { font: bold 100% sans-serif; color:green; text-align: center; text-transform: uppercase; }
+
+/* table */
+
+table { font-size: 75%; table-layout: fixed; width: 100%; }
+table { border-collapse: separate; border-spacing: 2px; }
+th, td { border-width: 1px; padding: 0.5em; position: relative; text-align: left; }
+th, td { border-radius: 0.25em; border-style: solid; }
+th { background: #EEE; border-color: #BBB; }
+td { border-color: #DDD; }
+
+/* page */
+
+html { font: 16px/1 'Open Sans', sans-serif; overflow: auto; padding: 0.5in; }
+html { background: #999; cursor: default; }
+
+body { box-sizing: border-box; height: 11in; margin: 0 auto; overflow: hidden; padding: 0.5in; width: 8.5in; }
+body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5); }
+
+</style>
+</head>
+<body>
+
+
+<div align="center">
+	<br>
+	<h2>Action on Invoice</h2><br>
+	<form action="#" th:action="@{/savequote}" th:object="${order}" method="post"> 
+		<table class="inventory" border="0" cellpadding="10">
+		
+		<tr>
+			<td> Customer Name: </td>
+			<td><input type="text" readonly="readonly" th:field="*{cname}"/></td>
+		</tr>
+		<tr>
+			<td> Customer ID: </td>
+			<td><input type="text" readonly="readonly" th:field="*{cid}"/></td>
+		</tr>
+		<tr>
+			<td> City: </td>
+			<td><input type="text" readonly="readonly" th:field="*{city}"/></td>
+		</tr>
+		<tr>
+			<td> Order ID: </td>
+			<td><input type="text"readonly="readonly" th:field="*{oid}"/></td>
+		</tr>
+		<tr>
+			<td> Order Date: </td>
+			<td><input type="text" readonly="readonly" th:field="*{odate}"/></td>
+		</tr>
+		<tr>
+			<td> Order Value: </td>
+			<td><input type="text" readonly="readonly" id="price" th:field="*{ovalue}"/></td>
+		</tr>
+		
+		<tr>
+			<td> Order Status: </td>
+			<td><input type="text" th:field="*{status}"/></td>
+		</tr>
+	
+		</table>
+		<br>
+		<!-- Calculating Invoice -->
+			<table class="balance" th:object="${order}">
+				<tr>
+					<th><span contenteditable>Shipping Cost ($)</span></th>
+					<td><input id="shipcost" readonly="readonly" text th:field="*{shipcost}"></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>GST ($)</span></th>
+					<td><input id="gstvalue" readonly="readonly" text th:field="*{gst}"></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Total Value ($)</span></th>
+					<td><input id="total" readonly="readonly" text th:field="*{totalvalue}"></td>
+				</tr>
+				
+			</table>
+			
+			<br>
+			<tr>
+				<td colspan="2"><button type="submit">Save</button> </td>
+			</tr>
+	</form>
+
+
+</div>
+</body>
+
+<footer>
+  <p>Author: CodeFury Team1 </p>
+  <p> Made with Our Logic ❤️ </p>
+</footer>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org"
+	xmlns:sec="http:www.thymeleaf.org/thymeleaf.org/thymleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Order System</title>
+<link rel = "stylesheet" type = "text/css" href = "/webjars/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/A.style.css.pagespeed.cf.XgDbNFMzAt.css">
+</head>
+<body>
+<!-- As a link -->
+<div align="center">
+<nav class="navbar navbar-dark primary-color">
+<br>
+<h3 th:inline="text" style="text-align:center;"> Welcome to our page <b> <span style="text-transform:uppercase;text-align:center;">"[[${#httpServletRequest.remoteUser}]]"</span></b>  👋</h3> <br>
+<br>
+
+</nav>
+<br>
+ 
+<hr>
+<h2><a> 📦 Order Processing System</a></h2>
+<hr>
+<div>
+<a href="new">Create New Product</a>
+</div>
+
+<br/><br/>
+
+<br> <hr>
+<table border=1 cellpadding="10">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Customer Name</th>
+			<th>Order Date</th>
+			<th>Order Value</th>
+			<th>Customer City</th>
+			<th> Status </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="order : ${listorder}">
+				<td th:text="${order.oid}">Order ID</td>
+				<td th:text="${order.customerName}">Customer Name</td>
+				<td th:text="${order.odate}">Order Date</td>
+				<td th:text="${order.ovalue}">Order Value</td>
+				<td th:text="${order.city}">Customer City</td>s
+				<td sec:authorize="hasRole('CUSTOMER')"> <a th:text="${order.status}">Status</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				 <a th:href="@{'/viewinvoice/'+ ${order.oid}}">View Invoice</a></td>
+				</tr>
+		</tbody>
+</table>
+    
+</div>
+
+<footer>
+  <p>Author: CodeFury Team1 </p>
+  <p> Made with Our Logic ❤️ </p>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js+bootstrap.min.js+main.js.pagespeed.jc.eF4oxXGybC.js"></script><script>eval(mod_pagespeed_1ubagWZVDG);</script>
+<script>eval(mod_pagespeed_sHeX_56lIR);</script>
+<script>eval(mod_pagespeed_v54rJ2Fspg);</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"74f332114ee88a1e","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
